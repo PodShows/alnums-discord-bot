@@ -13,9 +13,7 @@ client.on("ready", () => {
 client.on("guildMemberAdd", member => {
   const c = name =>
     (
-      member.guild.channels.find(
-        channel => console.log(channel.name) || channel.name === name
-      ) || `#${name}`
+      member.guild.channels.find(channel => channel.name === name) || `#${name}`
     ).toString();
 
   member.send(
@@ -53,6 +51,8 @@ N'hésitez pas à passer sur le site et découvrir les tutoriels et ressources o
 https://alliesnumeriques.org/
 `
   );
+
+  console.log("Message de bienvenue envoyé à " + member);
 });
 
 // Log our bot in using the token from https://discordapp.com/developers/applications/me
